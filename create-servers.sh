@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z097444713DPZHXLPARU8"
-DOMAIN="learninguser.online"
-SG_NAME="Allow-all"
+ZONE_ID="Z085102619LH8HGJ53FZC"
+DOMAIN="muralidevops.online"
+SG_NAME="allow-all"
 env=dev
 #############################
 
