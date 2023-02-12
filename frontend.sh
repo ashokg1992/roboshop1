@@ -14,7 +14,7 @@ cd /usr/share/nginx/html
 eco -e "\e[35m Extract Frontend Extract\e[0m"
 unzip /tmp/frontend.zip
 
-eco -e "\e[35m Copy Roboshop Nginx Config File \e[0m"
+eco -e "\e[35m Copy Roboshop Nginx Config File\e[0m"
 cp ${script_location}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
 
 eco -e "\e[35m Enable Nginx\e[0m"
