@@ -3,7 +3,7 @@ script_location=$(pwd)
 echo -e "\e[35m install Nginx\e[0m"
 yum install nginx -y
 
-eco -e "\e[35m Remove Nginx old content\e[0m"
+echo -e "\e[35m Remove Nginx old content\e[0m"
 rm -rf /usr/share/nginx/html/*
 
 echo -e "\e[35m Downlaod Frontend Content\e[0m"
