@@ -1,4 +1,5 @@
 script_location=$(pwd)
+LOG=/tmp/roboshop.log
 
 echo -e "\e[35m install Nginx\e[0m"
 yum install nginx -y &>>${LOG}
@@ -21,7 +22,7 @@ unzip /tmp/frontend.zip &>>${LOG}
 echo $?
 
 echo -e "\e[35m Copy Roboshop Nginx Config File\e[0m"
-cp ${script_location}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
+cp ${script_location}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
 echo $?
 
 echo -e "\e[35m Enable Nginx\e[0m"
