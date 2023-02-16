@@ -7,6 +7,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Install Nodejs \e[0m"
@@ -15,6 +16,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Add Application User\e[0m"
@@ -23,6 +25,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 mkdir -p /app &>>${LOG}
@@ -33,6 +36,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Cleanup Old Content\e[0m"
@@ -41,6 +45,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Extracting App Content\e[0m"
@@ -50,6 +55,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Installing Nodejs Dependencies\e[0m"
@@ -59,6 +65,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Configuring Catalogue Service File\e[0m"
@@ -67,6 +74,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Reload SystemD\e[0m"
@@ -75,6 +83,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Enable Catalogue Service \e[0m"
@@ -83,6 +92,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Start Catalogue Service \e[0m"
@@ -91,6 +101,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Configuring Mongo Repo \e[0m"
@@ -99,6 +110,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Install Mongo Clinet\e[0m"
@@ -107,6 +119,7 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
 
 echo -e "\e[35m Load Schema\e[0m"
@@ -115,4 +128,5 @@ if  [ $? -eq 0 ]; then
     echo SUCCESS
 else
    echo FAILURE
+exit
 fi
