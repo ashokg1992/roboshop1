@@ -72,7 +72,7 @@ LOAD_SCHEMA() {
       status_check
 
       print_head "Load Schema"
-      mongo --host mongodb.dev.muralidevops.online </app/schema/${component}.js &>>${LOG}
+      mongo --host mongodb-dev.muralidevops.online </app/schema/${component}.js &>>${LOG}
       status_check
     fi
 
@@ -88,68 +88,4 @@ LOAD_SCHEMA() {
     fi
 
   fi
-}
-
-NODEJS() {
-  print_head "Configuring NodeJS Repos"
-  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
-  status_check
-
-  print_head "Install NodeJS"
-  yum install nodejs -y &>>${LOG}
-  status_check
-
-  APP_PREREQ
-
-  print_head "Installing NodeJS Dependencies"
-  cd /app &>>${LOG}
-  npm install &>>${LOG}
-  status_check
-
-  SYSTEMD_SETUP
-
-  LOAD_SCHEMA
-}
-
-MAVEN() {
-
-  print_head "Install Maven"
-  yum install maven -y &>>${LOG}
-  status_check
-
-  APP_PREREQ
-
-  print_head "Build a package"
-  mvn clean package  &>>${LOG}
-  status_check
-
-  print_head "Copy App file to App Location"
-  mv target/${component}-1.0.jar ${component}.jar
-  status_check
-
-  SYSTEMD_SETUP
-
-  LOAD_SCHEMA
-
-}
-
-PYTHON() {
-
-  print_head "Install Python"
-  yum install python36 gcc python3-devel -y &>>${LOG}
-  status_check
-
-  APP_PREREQ
-
-  print_head "Download Dependencies"
-  cd /app
-  pip3.6 install -r requirements.txt  &>>${LOG}
-  status_check
-
-  print_head "Update Passwords in Service File"
-  sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}/" ${script_location}/files/${component}.service  &>>${LOG}
-  status_check
-
-  SYSTEMD_SETUP
-
 }
