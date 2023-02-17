@@ -62,5 +62,5 @@ yum install mongodb-org -y &>>${LOG}
 status_check
 
 print_head "Load Schema"
-mongo --host mongodb.dev.muralidevops.online </app/schema/catalogue.js &>>${LOG}
+mongo --host mongodb-dev.muralidevops.online </app/schema/catalogue.js &>>${LOG}
 status_check
