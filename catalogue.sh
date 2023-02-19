@@ -1,5 +1,3 @@
-LOG=/tmp/roboshop.log
-
 source common.sh
 
 print_head "Configuring Nodejs Repos"
