@@ -2,5 +2,5 @@ source common.sh
 
 component=user
 schema_load=true
-schema_type=mongo
+schema_type=mongoo
 NODEJS
