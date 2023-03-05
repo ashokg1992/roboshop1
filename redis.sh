@@ -1,7 +1,7 @@
 source common.sh
 
 print_head "Setup Redis Repo"
-cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>${LOG}
 status_check
 
 print_head "Enable Redis 6.2 dnf Module"
