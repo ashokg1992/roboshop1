@@ -20,6 +20,6 @@ print_head "Enable Redis"
 systemctl enable redis &>>${LOG}
 status_check
 
-print_head "Start Redis"
+print_head "Start Rediss"
 systemctl restart redis &>>${LOG}
 status_check
