@@ -158,3 +158,27 @@ LOAD_SCHEMA() {
     mongo --host mongodb-dev.muralidevops.online </app/schema/${component}.js &>>${LOG}
     status_check
    }
+
+MAVEN() {
+
+  print_head "Install Maven"
+  yum install maven -y &>>${LOG}
+  status_check
+
+  APP_PREREQ
+
+  print_head "Build a package"
+  mvn clean package  &>>${LOG}
+  status_check
+
+  print_head "Copy App file to App Location"
+  mv target/${component}-1.0.jar ${component}.jar
+  status_check
+
+  SYSTEMD_SETUP
+
+  LOAD_SCHEMA
+
+}
+
+
