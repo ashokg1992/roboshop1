@@ -90,8 +90,7 @@ LOAD_SCHEMA() {
   fi
 }
 
-
-   NODEJS() {
+NODEJS() {
     source common.sh
 
     print_head "Configuring Nodejs Repos"
